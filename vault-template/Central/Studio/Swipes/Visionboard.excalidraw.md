@@ -1,26 +1,31 @@
 ---
 Class: classSwipe
 Parent: "[[Studio]]"
-Pinned: true
 Category: aesthetic
-Platform: instagram
+Platform: Excalidraw
 Creator: ""
 Source_URL: ""
+Pinned: false
+Area: Studio
 Created: 08-11-2026 17:54
 Updated: 08-11-2026 17:54
-Area: Studio
 tags:
-  - studio/swipe
-Aliases:
-  - Visionboard
+  - swipe
+  - visual
+Aliases: []
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
-# Excalidraw Data
+📁 **Source:** `=this.file.name` | **Parent:** `=this.Parent`
 
-## Text Elements
-Metas dos Próximos 3 Anos:
-- Excelência Técnica e Profissional
-- Independência Financeira e Liberdade Geográfica
-- Saúde, Alta Energia e Foco Límpido
-- Vida Intelectual Ativa e Domínio Polímata
+---
+
+**Swipe Note:**
+Painel visual de referências, estética minimalista e horizontes de longo prazo.
+
+---
+🔗 Aliases: `=this.Aliases`
+🏷️ Tags: `=this.tags`
+🧭 Parent: `=this.Parent`
+⚙️ Created at: `=this.Created`
+🔄 Last Update: `=this.Updated`
+📁 Note Area: `=this.Area`

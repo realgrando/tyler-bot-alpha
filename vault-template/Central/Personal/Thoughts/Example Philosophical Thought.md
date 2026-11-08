@@ -17,4 +17,18 @@ Aliases: []
 ---
 
 **Thought Note:**
-A clareza de pensamento decorre da eliminação deliberada de estímulos ruidosos e da construção de sistemas simples e previsíveis.
+A clareza de pensamento decorre da eliminação deliberada de estímulos ruidosos e da construção de sistemas simples, determinísticos e previsíveis.
+
+---
+
+```dataviewjs
+await dv.view("Central/Configs/Scripts/views_relacionais", { mode: "thought" });
+```
+
+---
+🔗 Aliases: `=this.Aliases`
+🏷️ Tags: `=this.tags`
+🧭 Parent: `=this.Parent`
+⚙️ Created at: `=this.Created`
+🔄 Last Update: `=this.Updated`
+📁 Note Area: `=this.Area`

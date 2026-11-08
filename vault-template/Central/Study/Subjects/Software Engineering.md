@@ -1,9 +1,9 @@
 ---
 Class: classSubject
 Parent: "[[Technology]]"
-Mastery: 1
-Difficulty: 3
-Pinned: true
+Mastery: 4
+Difficulty: 4
+Pinned: false
 Status: in_progress
 inertia_ttl: 7
 Completed_At: ""
@@ -21,6 +21,19 @@ Aliases:
 
 ---
 
+**Subject Note:**
+Design de sistemas escaláveis, padrões arquiteturais, código limpo, tolerância a falhas e boas práticas de engenharia.
+
+---
+
 ```dataviewjs
 await dv.view("Central/Configs/Scripts/views_relacionais", { mode: "subject" });
 ```
+
+---
+🔗 Aliases: `=this.Aliases`
+🏷️ Tags: `=this.tags`
+🧭 Parent: `=this.Parent`
+⚙️ Created at: `=this.Created`
+🔄 Last Update: `=this.Updated`
+📁 Note Area: `=this.Area`

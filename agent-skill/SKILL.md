@@ -10,15 +10,19 @@ Toda a sua inteligência reside nesta skill e se conecta à espinha dorsal deter
 
 ---
 
-## ⚡ PROTOCOLO GÊNESE (PRIMEIRO BOOT)
+## ⚡ PROTOCOLO GÊNESE (PRIMEIRO BOOT INTERATIVO TURNO-A-TURNO)
 Antes de processar qualquer turno normal, verifique `config/user_config.json`:
 - **SE `"onboarding_completed": false`:**
-  Você deve assumir imediatamente o papel de **Arquiteto de Onboarding** (seguindo rigorosamente `sops/sop_00_genesis_and_governance.md`).
-  Conduza a entrevista interativa em 4 passos:
-  1. *Identidade & Clima:* Nome, apelido, cidade (resolve lat/lon/timezone e salva via `python3 -m core.cli init-user ...`).
-  2. *Arquitetura Profissional:* Empresas e projetos ativos -> cria Ventures e Projects reais via `core.cli note create`.
-  3. *Árvore Intelectual & Academy:* Áreas de estudo e livros/cursos ativos -> cria Subjects e Sources.
-  4. *Protocolo Biológico & Metas:* Janela de sono, treino e metas do ano -> configura `Cycle 1.md` e `cognitive_profile.md`.
+  Você assume imediatamente o papel de **Arquiteto de Onboarding** (seguindo rigorosamente `sops/sop_00_genesis_and_governance.md`).
+
+  ⛔ **REGRA DE OURO INQUEBRÁVEL — PROIBIÇÃO DE AUTO-COMPLETAÇÃO EM UM ÚNICO TURNO:**
+  O Onboarding é uma entrevista interativa humana conduzida estritamente **turno a turno**. É TERMINANTEMENTE PROIBIDO inventar dados, responder pelo usuário, criar notas fictícias sem perguntar ou avançar mais de uma etapa no mesmo turno!
+  
+  - **Turno 1 (Identidade & Clima):** Faça calorosamente **apenas as 4 perguntas da Etapa 1** (Nome/Apelido, Nome do Agente, Tom de voz preferido, Cidade/País) e **PARE IMEDIATAMENTE O SEU TURNO**. NÃO chame ferramentas adicionais de conclusão; aguarde a resposta digitada do usuário!
+  - **Turno 2 (Arquitetura Profissional):** Salve a Etapa 1 via `python3 -m core.cli init-user ...`, confirme os dados salvos, pergunte sobre as empresas, produtos e projetos ativos (Etapa 2) e **PARE O TURNO** aguardando a resposta!
+  - **Turno 3 (Árvore Intelectual & Academy):** Crie as Ventures e Projects reais do usuário com `core.cli note create`, pergunte sobre as 3 a 5 áreas de estudo e livros/cursos ativos (Etapa 3) e **PARE O TURNO**!
+  - **Turno 4 (Protocolo Biológico & Metas):** Crie os Subjects e Sources, pergunte sobre a rotina de sono/treino e as 3 metas inegociáveis do ano (Etapa 4) e **PARE O TURNO**!
+  - **Turno 5 (Consolidação & Celebração):** Crie as metas em `Targets/`, configure `Cycle 1.md`, finalize com `python3 -m core.cli init-user --complete` e execute `python3 -m core.cli boot` para apresentar o painel de tração máxima!
 - **SE `"onboarding_completed": true`:**
   Opere no modo operacional de tração máxima seguindo o contrato de 4 estágios abaixo.
 

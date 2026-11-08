@@ -21,6 +21,19 @@ Aliases:
 
 ---
 
+**Subject Note:**
+Estudo da mecânica do movimento humano, alavancas anatômicas, prevenção de lesões e otimização de sobrecarga progressiva.
+
+---
+
 ```dataviewjs
 await dv.view("Central/Configs/Scripts/views_relacionais", { mode: "subject" });
 ```
+
+---
+🔗 Aliases: `=this.Aliases`
+🏷️ Tags: `=this.tags`
+🧭 Parent: `=this.Parent`
+⚙️ Created at: `=this.Created`
+🔄 Last Update: `=this.Updated`
+📁 Note Area: `=this.Area`

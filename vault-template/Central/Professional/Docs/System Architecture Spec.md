@@ -1,9 +1,7 @@
 ---
 Class: classDoc
 Parent: "[[Core Project v1]]"
-Subtype: spec
 Pinned: false
-Priority: 4
 Area: Professional
 Created: 08-11-2026 17:54
 Updated: 08-11-2026 17:54
@@ -17,5 +15,19 @@ Aliases: []
 
 ---
 
-**Document:**
-Especificação da arquitetura limpa do sistema, definindo fronteiras entre entidades, casos de uso e adaptadores externos.
+**Doc Note:**
+Especificação arquitetural do ecossistema Life OS v5.0, integrando o Obsidian Vault ao agente autônomo com persistência determinística.
+
+---
+
+```dataviewjs
+await dv.view("Central/Configs/Scripts/views_relacionais", { mode: "doc" });
+```
+
+---
+🔗 Aliases: `=this.Aliases`
+🏷️ Tags: `=this.tags`
+🧭 Parent: `=this.Parent`
+⚙️ Created at: `=this.Created`
+🔄 Last Update: `=this.Updated`
+📁 Note Area: `=this.Area`

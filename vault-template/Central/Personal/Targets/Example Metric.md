@@ -26,4 +26,12 @@ Aliases: []
 ---
 
 **Metric Note:**
-Rastreamento cumulativo de horas de engenharia e estudo aplicado.
+Rastreamento cumulativo de horas de engenharia, foco deliberado e estudo aplicado.
+
+---
+🔗 Aliases: `=this.Aliases`
+🏷️ Tags: `=this.tags`
+🧭 Parent: `=this.Parent`
+⚙️ Created at: `=this.Created`
+🔄 Last Update: `=this.Updated`
+📁 Note Area: `=this.Area`

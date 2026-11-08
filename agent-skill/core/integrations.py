@@ -35,6 +35,7 @@ from .config import (
     MANDATORY_DAILY_FIELDS,
     TEMPLATES_DIR,
     TIMEZONE_URL,
+    USER_CONFIG,
     get_daily_path,
     get_season_south,
 )
@@ -488,6 +489,14 @@ def fetch_external_boot_context() -> Dict[str, Any]:
         "git_commits_today": [],
     }
 
+    features = USER_CONFIG.get("features", {})
+    google_enabled = features.get("google_cli", False)
+    git_pow_enabled = features.get("git_pow", True)
+    onboarding_done = USER_CONFIG.get("onboarding_completed", False)
+
+    if not onboarding_done:
+        return results
+
     def _get_telemetry() -> Any:
         bin_p = LOCAL_BIN_DIR / "tyler-daily"
         if bin_p.exists():
@@ -500,12 +509,16 @@ def fetch_external_boot_context() -> Dict[str, Any]:
         return None
 
     def _get_calendar() -> str:
+        if not google_enabled:
+            return ""
         bin_p = LOCAL_BIN_DIR / "gcalendar"
         if bin_p.exists():
             return _run_fast_cli([str(bin_p), "list", "--days", "1"], timeout=2.5)
         return ""
 
     def _get_tasks() -> str:
+        if not google_enabled:
+            return ""
         bin_p = LOCAL_BIN_DIR / "gtasks"
         if bin_p.exists():
             return _run_fast_cli([str(bin_p), "list"], timeout=2.5)
@@ -513,7 +526,7 @@ def fetch_external_boot_context() -> Dict[str, Any]:
 
     def _get_git_pow() -> List[str]:
         commits: List[str] = []
-        if not CODE_WORKSPACE_DIR.exists():
+        if not git_pow_enabled or not CODE_WORKSPACE_DIR.exists():
             return commits
         today_iso = datetime.now().strftime("%Y-%m-%d")
         for repo in CODE_WORKSPACE_DIR.iterdir():

@@ -23,8 +23,25 @@ Aliases:
 
 📁 **Source:** `=this.file.name` | **Parent:** `=this.Parent`
 
+```dataviewjs
+await dv.view("Central/Configs/Scripts/views_relacionais", { mode: "progress" });
+```
+
+---
+
+**Book Note:**
+Tratado essencial sobre independência de frameworks, inversão de controle e arquiteturas limpas.
+
 ---
 
 ```dataviewjs
 await dv.view("Central/Configs/Scripts/views_relacionais", { mode: "book" });
 ```
+
+---
+🔗 Aliases: `=this.Aliases`
+🏷️ Tags: `=this.tags`
+🧭 Parent: `=this.Parent`
+⚙️ Created at: `=this.Created`
+🔄 Last Update: `=this.Updated`
+📁 Note Area: `=this.Area`

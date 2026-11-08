@@ -308,10 +308,115 @@ def cmd_shutdown(args: argparse.Namespace) -> int:
 
 
 
+def update_cognitive_profile_placeholders(
+    user_name: str = "",
+    nickname: str = "",
+    agent_name: str = "",
+    tone: str = "",
+    bed_time: str = "",
+    wake_time: str = "",
+) -> None:
+    prof_path = SKILL_DIR / "resources" / "cognitive_profile.md"
+    if not prof_path.exists():
+        return
+    txt = prof_path.read_text(encoding="utf-8")
+    if user_name:
+        txt = txt.replace("{{USER_NAME}}", user_name)
+    if nickname:
+        txt = txt.replace("{{USER_NICKNAME}}", nickname)
+    if agent_name:
+        txt = txt.replace("{{AGENT_NAME}}", agent_name)
+    if tone:
+        txt = txt.replace("{{AGENT_TONE}}", tone)
+    if bed_time:
+        txt = txt.replace("{{BIO_BED_TIME}}", bed_time)
+    if wake_time:
+        txt = txt.replace("{{BIO_WAKE_TIME}}", wake_time)
+    prof_path.write_text(txt, encoding="utf-8")
+
+
+def run_interactive_onboarding() -> int:
+    print("=" * 64)
+    print("🌟 LIFE OS v5.0 — PROTOCOLO GÊNESE (Terminal Interativo)")
+    print("=" * 64)
+    print("Bem-vindo ao instalador guiado do seu Segundo Cérebro.\n")
+
+    user_name = input("1. Qual o seu nome completo? ").strip() or "Usuário"
+    nickname = input(f"2. Como prefere ser chamado no dia a dia? [{user_name}]: ").strip() or user_name
+    agent_name = input("3. Qual o nome do seu agente/co-piloto? [Tyler]: ").strip() or "Tyler"
+
+    print("\nEscolha o Tom de Comunicação:")
+    print("  1) direct_pragmatic   (Pragmático, direto ao ponto, zero enrolação - Recomendado)")
+    print("  2) socratic_mentor    (Mentor socrático, reflexivo, estimula profundidade)")
+    print("  3) technical_architect (Arquiteto sênior de software, altamente técnico)")
+    tone_choice = input("Tom desejado [1]: ").strip()
+    tone_map = {"1": "direct_pragmatic", "2": "socratic_mentor", "3": "technical_architect"}
+    agent_tone = tone_map.get(tone_choice, "direct_pragmatic")
+
+    city = input("\n4. Em qual cidade você mora? [São Paulo]: ").strip() or "São Paulo"
+    state = input("5. Qual a sigla do seu Estado? [SP]: ").strip() or "SP"
+    country = input("6. Qual o seu País? [BR]: ").strip() or "BR"
+
+    vault_input = input("\n7. Caminho para o Obsidian Vault [Enter para usar ./vault-template]: ").strip()
+    vault_path = str(Path(vault_input).resolve()) if vault_input else ""
+
+    try:
+        from .config import load_user_config, save_user_config
+    except ImportError:
+        from core.config import load_user_config, save_user_config
+    cfg = load_user_config()
+    cfg["user_name"] = user_name
+    cfg["user_nickname"] = nickname
+    cfg["agent_name"] = agent_name
+    cfg["agent_tone"] = agent_tone
+    cfg["city"] = city
+    cfg["state"] = state
+    cfg["country"] = country
+    if vault_path:
+        cfg["vault_path"] = vault_path
+    cfg["onboarding_completed"] = True
+    save_user_config(cfg)
+
+    update_cognitive_profile_placeholders(user_name, nickname, agent_name, agent_tone)
+
+    print("\n⚙️ Sincronizando sensores e inicializando a Daily Note...")
+    try:
+        try:
+            from .integrations import sync_weather, ensure_daily_note
+        except ImportError:
+            from core.integrations import sync_weather, ensure_daily_note
+        ensure_daily_note()
+        sync_weather(inject_daily=True)
+    except Exception as e:
+        print(f"Aviso de sincronização: {e}")
+
+    print("\n" + "=" * 64)
+    print("🚀 INSTALAÇÃO CONCLUÍDA COM SUCESSO!")
+    print(f"👤 Usuário: {user_name} ({nickname})")
+    print(f"🤖 Co-Piloto: {agent_name} ({agent_tone})")
+    print(f"📍 Localização: {city}, {state} - {country}")
+    print(f"🔒 Status: Onboarding 100% finalizado. Motor pronto para tração!")
+    print("=" * 64 + "\n")
+    return 0
+
+
 def cmd_init_user(args: argparse.Namespace) -> int:
     """Configura o perfil do usuário na primeira inicialização (Protocolo Gênese)."""
-    from .config import load_user_config, save_user_config
+    try:
+        from .config import load_user_config, save_user_config
+    except ImportError:
+        from core.config import load_user_config, save_user_config
     cfg = load_user_config()
+
+    if getattr(args, "reset", False):
+        cfg["onboarding_completed"] = False
+        save_user_config(cfg)
+        print(json.dumps({"status": "onboarding_reset", "onboarding_completed": False}, indent=2, ensure_ascii=False))
+        return 0
+
+    if getattr(args, "interactive", False):
+        return run_interactive_onboarding()
+
     if args.name:
         cfg["user_name"] = args.name
     if args.nickname:
@@ -322,6 +427,10 @@ def cmd_init_user(args: argparse.Namespace) -> int:
         cfg["agent_tone"] = args.tone
     if args.city:
         cfg["city"] = args.city
+    if getattr(args, "state", None):
+        cfg["state"] = args.state
+    if getattr(args, "country", None):
+        cfg["country"] = args.country
     if args.lat is not None:
         cfg["lat"] = args.lat
     if args.lon is not None:
@@ -330,9 +439,18 @@ def cmd_init_user(args: argparse.Namespace) -> int:
         cfg["timezone"] = args.timezone
     if args.vault_path:
         cfg["vault_path"] = args.vault_path
-    cfg["onboarding_completed"] = True
+
+    if getattr(args, "complete", False):
+        cfg["onboarding_completed"] = True
+
     save_user_config(cfg)
-    print(json.dumps({"status": "user_initialized", "config": cfg}, indent=2, ensure_ascii=False))
+    update_cognitive_profile_placeholders(
+        cfg.get("user_name", ""),
+        cfg.get("user_nickname", ""),
+        cfg.get("agent_name", ""),
+        cfg.get("agent_tone", ""),
+    )
+    print(json.dumps({"status": "user_updated", "config": cfg}, indent=2, ensure_ascii=False))
     return 0
 
 def build_parser() -> argparse.ArgumentParser:
@@ -408,15 +526,20 @@ def build_parser() -> argparse.ArgumentParser:
 
     # 7. init-user
     p_init = sub.add_parser("init-user", help="Configura perfil de usuário no primeiro boot")
+    p_init.add_argument("-i", "--interactive", action="store_true", help="Modo interativo guiado no terminal")
     p_init.add_argument("--name", help="Nome do usuário")
     p_init.add_argument("--nickname", help="Como o agente deve chamar o usuário")
     p_init.add_argument("--agent-name", help="Nome do agente (ex: Jarvis, Tyler, Atlas)")
     p_init.add_argument("--tone", choices=["direct_pragmatic", "socratic_mentor", "technical_architect"], help="Tom do agente")
     p_init.add_argument("--city", help="Cidade do usuário")
+    p_init.add_argument("--state", help="Estado (UF) do usuário")
+    p_init.add_argument("--country", default="BR", help="País (código ISO ex: BR)")
     p_init.add_argument("--lat", type=float, help="Latitude")
     p_init.add_argument("--lon", type=float, help="Longitude")
     p_init.add_argument("--timezone", help="Timezone IANA (ex: America/Sao_Paulo)")
     p_init.add_argument("--vault-path", help="Caminho absoluto do Vault")
+    p_init.add_argument("--complete", action="store_true", help="Marca o onboarding como totalmente concluído")
+    p_init.add_argument("--reset", action="store_true", help="Reseta o onboarding para permitir reconfiguração")
 
     return parser
 

@@ -79,6 +79,11 @@ When a new user clones this template and opens the agent, the file `config/user_
 3. **Intellectual Tree (Academy):** Asks for core study domains and in-progress books/courses, generating `classSubject` trees, MOCs, and sources in `Central/Study/`.
 4. **Biological Protocol & Goals:** Collects training splits, sleep windows, and annual targets, populating `Central/Personal/Cycles/Cycle 1.md`, `Central/Personal/Targets/`, and `resources/cognitive_profile.md`, then marks `"onboarding_completed": true`.
 
+> 💡 **Terminal Alternative:** You can also run the interactive wizard directly in your terminal at any time via:
+> ```bash
+> life-os init-user -i
+> ```
+
 ---
 
 ## 📦 DIRECTORY LAYOUT

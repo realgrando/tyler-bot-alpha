@@ -19,6 +19,19 @@ Aliases:
 
 ---
 
+**Cycle Note:**
+Ciclo inaugural de ancoragem de hábitos essenciais, telemetria diária e blocos de deep work.
+
+---
+
 ```dataviewjs
 await dv.view("Central/Configs/Scripts/views_relacionais", { mode: "cycle" });
 ```
+
+---
+🔗 Aliases: `=this.Aliases`
+🏷️ Tags: `=this.tags`
+🧭 Parent: `=this.Parent`
+⚙️ Created at: `=this.Created`
+🔄 Last Update: `=this.Updated`
+📁 Note Area: `=this.Area`

@@ -1,9 +1,9 @@
 ---
 Class: classSubject
 Parent: "[[Academy]]"
-Mastery: 1
+Mastery: 3
 Difficulty: 3
-Pinned: true
+Pinned: false
 Status: in_progress
 inertia_ttl: 14
 Completed_At: ""
@@ -21,6 +21,19 @@ Aliases:
 
 ---
 
+**Subject Note:**
+Investigação dos fundamentos da ética, epistemologia, metafísica e sentido da existência.
+
+---
+
 ```dataviewjs
 await dv.view("Central/Configs/Scripts/views_relacionais", { mode: "subject" });
 ```
+
+---
+🔗 Aliases: `=this.Aliases`
+🏷️ Tags: `=this.tags`
+🧭 Parent: `=this.Parent`
+⚙️ Created at: `=this.Created`
+🔄 Last Update: `=this.Updated`
+📁 Note Area: `=this.Area`

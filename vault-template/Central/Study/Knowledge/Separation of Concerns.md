@@ -2,25 +2,31 @@
 Class: classZettel
 Parent: "[[SOLID Principles MOC]]"
 Subtype: atomic
-Maturity: seed
-Source_Ref:
-  - "[[Clean Architecture Book]]"
-Anki_Deck: ""
-Anki_Sync: none
-Canvas: ""
+Maturity: evergreen
+Source_Ref: "[[Clean Architecture Book]]"
 Pinned: false
 Area: Study
 Created: 08-11-2026 17:54
 Updated: 08-11-2026 17:54
 tags:
-  - zettel/atomic
+  - zettel
+  - architecture
 Aliases:
-  - Separação de Preocupações
+  - Separação de Conceitos
 ---
 
 📁 **Source:** `=this.file.name` | **Parent:** `=this.Parent`
 
 ---
 
-**Conceito Atômico:**
-A separação de preocupações prega que cada parte de um sistema de software deve ser responsável por um aspecto isolado do seu comportamento, minimizando acoplamentos desnecessários e maximizando a testabilidade e a resiliência a mudanças.
+**Zettel Note:**
+O princípio de separação de conceitos estabelece que um módulo de software deve ter uma única e bem definida responsabilidade, isolando regras de negócio da infraestrutura de dados ou apresentação. Isso garante alta coesão e baixo acoplamento entre os componentes de um sistema.
+
+---
+🔗 Aliases: `=this.Aliases`
+🏷️ Tags: `=this.tags`
+🧭 Parent: `=this.Parent`
+📚 Sources: `=this.Source_Ref`
+⚙️ Created at: `=this.Created`
+🔄 Last Update: `=this.Updated`
+📁 Note Area: `=this.Area`

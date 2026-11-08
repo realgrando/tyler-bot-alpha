@@ -20,7 +20,22 @@ Aliases: []
 
 📁 **Source:** `=this.file.name` | **Parent:** `=this.Parent`
 
+```dataviewjs
+await dv.view("Central/Configs/Scripts/views_relacionais", { mode: "progress" });
+```
+
 ---
 
 **Goal Note:**
-Meta anual de consolidação de foco profundo e consistência diária.
+Meta anual de consolidação de foco profundo, consistência diária e engenharia de software de alto nível.
+
+**Timeline:**
+- [01-01-2026] Abertura e início da meta.
+
+---
+🔗 Aliases: `=this.Aliases`
+🏷️ Tags: `=this.tags`
+🧭 Parent: `=this.Parent`
+⚙️ Created at: `=this.Created`
+🔄 Last Update: `=this.Updated`
+📁 Note Area: `=this.Area`
