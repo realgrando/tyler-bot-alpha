@@ -5,176 +5,157 @@
 [![SQLite WAL](https://img.shields.io/badge/sqlite-WAL%20mode-green.svg)](https://www.sqlite.org/wal.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **Life OS v5.0** is an open-source, hybrid personal operating system and agentic second brain. It bridges a **Markdown Cognitive Cortex** (human-friendly in Obsidian and VS Code) with a **Deterministic Python & SQLite WAL Spine** (`life-os` CLI) to eradicate LLM schema hallucinations, prevent context loss, and guarantee rigorous mathematical structure across all areas of life, work, and polymathic study.
+> **Life OS v5.0** is an open-source, hybrid personal operating system. It fuses a **Markdown Cognitive Cortex** (human-readable in Obsidian & VS Code) with a **Deterministic Python & SQLite Spine** (`life-os` CLI) to eliminate LLM schema hallucinations, prevent context loss, and enforce mathematical Third Normal Form (3NF) relational integrity across your life, ventures, and polymathic studies.
 
 ---
 
-## 🏛️ ARCHITECTURE OVERVIEW
+## 💡 A IDEIA (THE CONCEPT)
+
+Traditional AI second brains fail because LLMs hallucinate metadata enums, break YAML delimiters (`---`), lose conversational context, and let notes rot. 
+
+**Life OS v5.0 solves this with a two-tier hybrid architecture:**
+1. **Cognitive Cortex (Obsidian Markdown):** 20 strictly typed OOP classes (`Central/Configs/Classes/`), dynamic dataview dashboards, and canonical templates. Human-editable and visually stunning.
+2. **Deterministic Spine (Python + SQLite WAL):** A sub-15ms CLI engine (`life-os`) that acts as a relational gatekeeper, syncs real-world barometric weather sensors, logs events to an immutable SQLite journal, and propagas heat upward via a Proof-of-Work (PoW) thermodynamic engine.
 
 ```text
-┌────────────────────────────────────────────────────────────────────────┐
-│                        USER CONVERSATIONAL LAYER                       │
-│           (Natural fluid chat via CLI, VS Code or Agentic UI)          │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│                      HYBRID AGENT KERNEL (v5.0)                        │
-│                                                                        │
-│   [Cortex in Markdown]                   [Deterministic Python Spine]  │
-│   ├── SKILL.md (Turn Contract)           ├── schema_loader.py (Dynamic)│
-│   ├── resources/ (Ontology & Schema)     ├── vault_crud.py (3NF Gate)  │
-│   ├── sops/ (SOP 00 to SOP 06)           ├── kinetic_bridge.py (PoW)   │
-│   └── subagents/ (Librarian/Engineer)    ├── integrations.py (Weather) │
-│                                          └── cli.py (~/.local/bin)     │
-└───────────────────┬────────────────────────────────┬───────────────────┘
-                    │                                │
-                    ▼                                ▼
-┌──────────────────────────────────────┐  ┌──────────────────────────────┐
-│       SQLITE WAL STATE MACHINE       │  │    OBSIDIAN VAULT v5.0 (3NF) │
-│                                      │  │                              │
-│   - memory.db (day_events WAL)       │  │   Central/                   │
-│   - today_stream.md (Live Mirror)    │  │   ├── Hubs/ (6 Sovereign)    │
-│   - memory_hot_palace.md (<6 KB)     │  │   ├── Professional/          │
-│   - kinetic_events (Thermal Log)     │  │   ├── Study/ (Zettelkasten)  │
-│                                      │  │   └── Personal/ (Journal)    │
-└──────────────────────────────────────┘  └──────────────────────────────┘
+┌────────────────────────────────────────────────────────┐
+│                   HUMAN / AGENT CHAT                   │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│                 LIFE OS KERNEL (v5.0)                  │
+│   [Cortex in Markdown]       [Deterministic Spine]     │
+│   • 20 OOP Classes (3NF)     • schema_loader.py (<10ms)│
+│   • 22 Rich Templates        • vault_crud.py (Gate)    │
+│   • SOPs & Cognitive Profile • integrations.py (Sensors)│
+└─────────────┬────────────────────────────┬─────────────┘
+              │                            │
+              ▼                            ▼
+┌───────────────────────────┐┌───────────────────────────┐
+│     SQLITE WAL STATE      ││    OBSIDIAN VAULT 3NF     │
+│  • memory.db (Events)     ││  • Central/Hubs (6 Roots) │
+│  • today_stream.md        ││  • Central/Professional   │
+│  • Hot Palace (<6 KB)     ││  • Central/Study (Zettel) │
+└───────────────────────────┘└───────────────────────────┘
 ```
 
 ---
 
-## 🌟 CORE INNOVATIONS
-
-### 1. Zero-Hardcoding Dynamic Schema Loader
-Unlike brittle agent setups with hardcoded JSON schemas or prompt instructions, `schema_loader.py` dynamically parses the Vault's class definition files (`Central/Configs/Classes/*.md`) at runtime. It resolves 3-level OOP inheritance (`classBase` ➔ `classTracked` ➔ Concrete Classes) and validates enums, allowed value lists, and numeric bounds directly against the markdown metadata.
-
-### 2. Third Normal Form (3NF) Relational Integrity
-- **Zero Orphans:** Every note created (with the sole exception of the sovereign root `Life.md`) must possess a valid, existing `Parent: "[[Parent Note]]"`.
-- **Zero Layer Jumping:** Strict hierarchy prevents conceptual clutter (e.g., Projects belong to Ventures; Literature Notes belong to Books or Courses; Atomic Zettels belong to MOCs or Sub-Subjects).
-
-### 3. Thermodynamic Kinetic Engine (Proof-of-Work)
-Notes are dynamic thermal entities. Producing real work (e.g., adding an atomic zettel or literature lecture):
-- **Wakes Ancestors:** Propagates heat up the tree from leaf to parent, waking paused projects and ventures to `Status: in_progress`.
-- **Auto-Increments & Completes:** Increments `Current` counters on parent courses/books and automatically marks them `Status: done` with `Completed_At` timestamps when `Current >= Target`.
-- **Auto-Pauses Inactivity:** A kinetic background tick cools inactive notes whose `inertia_ttl` has expired.
-
-### 4. 85-Field Daily Flight Recorder & Exogenous Sensors
-The daily note (`classDaily`) tracks **85 orthogonal fields across 7 axes**:
-- **Environment (`env_`):** Automated Open-Meteo sync fetching min/max temp, humidity, WMO weather code, daylight hours, air quality, and **24-hour barometric pressure delta** (`env_pressure_delta`), an exogenous predictor of cognitive fatigue and headaches.
-- **Biology & Sleep (`bio_`):** Bed/wake times, total hours, quality, sleep inertia, training load, caffeine doses, and clinical symptoms.
-- **Execution (`exec_`):** Net deep work hours, screen time, cognitive load, flow state, fragmentation, and shipped outputs.
-- **Polymathy (`poly_`):** Cross-pollination depth, domains studied, and synthesis modalities.
-- **Cognition & Temperance (`cog_`):** Baseline mood, energy, drive source, clarity, working memory load, and subjective day rating.
-- **Habits (`h_` / `bh_`):** Clean nutrition, hydration, morning sunlight, tidy environment, and containment of cheap dopamine.
-- **Semantic Layer (`ctx_`):** Qualitative narrative logs and entity links.
-
----
-
-## 🚀 THE GENESIS PROTOCOL (FIRST-BOOT ARCHITECT)
-
-When a new user clones this template and opens the agent, the file `config/user_config.json` contains `"onboarding_completed": false`. The agent immediately assumes the role of **Onboarding Architect** (`sop_00_genesis_and_governance.md`):
-
-1. **Identity & Location:** Collects user name, preferred agent name (e.g., Jarvis, Tyler, Atlas), communication tone (`direct_pragmatic`, `socratic_mentor`, `technical_architect`), and city (resolving latitude/longitude and timezone automatically).
-2. **Professional Topology:** Inquires about current ventures, clients, and active projects, generating customized `classVenture` and `classProject` notes in `Central/Professional/`.
-3. **Intellectual Tree (Academy):** Asks for core study domains and in-progress books/courses, generating `classSubject` trees, MOCs, and sources in `Central/Study/`.
-4. **Biological Protocol & Goals:** Collects training splits, sleep windows, and annual targets, populating `Central/Personal/Cycles/Cycle 1.md`, `Central/Personal/Targets/`, and `resources/cognitive_profile.md`, then marks `"onboarding_completed": true`.
-
-> 💡 **Terminal Alternative:** You can also run the interactive wizard directly in your terminal at any time via:
-> ```bash
-> life-os init-user -i
-> ```
-
----
-
-## 📦 DIRECTORY LAYOUT
+## 📁 A ESTRUTURA (STRUCTURE)
 
 ```text
 .
-├── README.md                            # Comprehensive documentation
-├── install.sh                           # One-line automated installer
-├── .gitignore                           # Ignores WAL caches, secrets, and temp files
-├── vault-template/                      # The Blank Obsidian Vault v5.0
-│   ├── .obsidian/                       # Essential plugin configs (Dataview, Metadata Menu, etc.)
+├── install.sh                  # One-line installer (symlinks CLI & sets timers)
+├── vault-template/             # Clean Obsidian Vault ready for use
+│   ├── .obsidian/              # Community plugins (Dataview, Metadata Menu, etc.)
 │   └── Central/
-│       ├── Configs/
-│       │   ├── Classes/                 # 20 MetadataMenu OOP Class Specifications
-│       │   ├── Templates/               # 22 Canonical Templates + createNotesSystem.js
-│       │   └── Scripts/                 # views_relacionais.js, hud_daily.js, vault_kinetic_engine.py
-│       ├── Hubs/                        # 6 Sovereign Hubs (Life, Work, Academy, Library, Cinema, Studio)
-│       ├── Personal/                    # Cycles, Journal (Dailies), Targets, Thoughts
-│       ├── Professional/                # Ventures, Projects, Docs
-│       ├── Studio/                      # Productions, Swipes (Excalidraw Visionboard)
-│       ├── Study/                       # Subjects, Sources (Books/Courses/Movies), Literature, Knowledge
-│       └── Archive/                     # Archived items
-└── agent-skill/                         # The Hybrid Agent Kernel
-    ├── SKILL.md                         # Turn contract & router
-    ├── config/user_config.json          # User settings & onboarding state
-    ├── resources/                       # Cognitive profile, ontology guide, daily schema
-    ├── sops/                            # Standard Operating Procedures (SOP 00 to SOP 06)
-    ├── subagents/                       # Librarian, Code Engineer, Vault Miner
-    ├── core/                            # Deterministic Python SDK
-    └── state/                           # Hot memory palace & SQLite WAL database
+│       ├── Configs/Classes/    # 20 OOP metadata schema definitions
+│       ├── Configs/Templates/  # 22 Canonical templates with relational footers
+│       ├── Configs/Scripts/    # Dynamic Dataview HUDs & views_relacionais.js
+│       ├── Hubs/               # 6 Sovereign root hubs (Life, Work, Academy...)
+│       ├── Personal/           # Cycles, Journal (Dailies), Targets, Thoughts
+│       ├── Professional/       # Ventures, Projects, Docs
+│       └── Study/              # Subjects, Sources, Literature, Knowledge (MOCs)
+└── agent-skill/                # The Agent Kernel & Python Spine
+    ├── SKILL.md                # 4-stage turn contract for AI coding assistants
+    ├── config/user_config.json # User settings, city coordinates, features
+    ├── resources/              # Cognitive profile & daily telemetry schema
+    ├── sops/                   # Standard Operating Procedures (SOP 00 to 06)
+    └── core/                   # Deterministic Python SDK & CLI (`life-os`)
 ```
 
 ---
 
-## ⚡ QUICKSTART & INSTALLATION
+## 🚀 BOOT GÊNESE DIRETO PELO CLI (FIRST-TIME SETUP)
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/<your-username>/life-os-template.git
-cd life-os-template
-```
+Configurar o seu Life OS leva menos de **2 minutos** diretamente no terminal, sem precisar de IA:
 
-### 2. Run the Installer
+### 1. Clone o repositório e execute o instalador
 ```bash
+git clone https://github.com/realgrando/tyler-bot-alpha.git life-os
+cd life-os
+chmod +x install.sh
 ./install.sh
 ```
-The installer:
-- Verifies Python 3.10+
-- Compiles the Python SDK with zero errors
-- Symlinks the global CLI to `~/.local/bin/life-os`
-- Configures background `systemd --user` timers for morning boot (`05:00`) and weather sync (`07:00, 14:00, 21:00`)
+*O instalador compila o core e cria o comando global `life-os` (e `tyler-core`) em `~/.local/bin/`.*
 
-### 3. Open the Vault in Obsidian
-- Open **Obsidian Desktop** ➔ *Open folder as vault* ➔ Select `vault-template/`.
-- Trust author and enable community plugins (Dataview, Metadata Menu, Templater).
+### 2. Execute o Boot Gênese Interativo no Terminal
+Este comando roda o wizard interativo que coleta seus dados e personaliza seu ambiente:
+```bash
+life-os init-user -i
+```
+O assistente perguntará:
+- **Seu Nome e Apelido:** Como o sistema e o agente devem te chamar.
+- **Nome do Co-Piloto:** (Ex: `Tyler`, `Jarvis`, `Atlas`).
+- **Tom de Comunicação:** (`direct_pragmatic` | `socratic_mentor` | `technical_architect`).
+- **Sua Cidade e País:** Resolve latitude, longitude e fuso horário para os sensores meteorológicos.
+- **Caminho do Vault:** Pressione `Enter` para usar o `./vault-template` padrão.
 
-### 4. Start Your Agent
-Connect your AI coding assistant (or agent CLI) to `agent-skill/` and say:
-> *"Hello, let's set up my Life OS."*
+> ⚡ **Alternativa Não-Interativa (1-Liner):**
+> ```bash
+> life-os init-user --name "Seu Nome" --nickname "Apelido" --agent-name "Tyler" --tone direct_pragmatic --city "São Paulo" --state "SP" --complete
+> ```
 
-The **Genesis Protocol** will conduct your first-boot interview and construct your personal knowledge empire!
+### 3. Execute o Primeiro Boot Matinal
+```bash
+life-os boot
+```
+Em menos de 2 segundos, o comando:
+- Cria a **Daily Note** de hoje com os 85 campos de telemetria.
+- Sincroniza o clima real da sua cidade via Open-Meteo (incluindo variação barométrica `env_pressure_delta`).
+- Inicializa o **Ciclo Ativo** e roda o tick cinético no Vault.
+- Exibe o HUD inicial pronto para ação.
+
+### 4. Abra o Cofre no Obsidian
+1. Abra o **Obsidian Desktop** ➔ *Open folder as vault*.
+2. Selecione a pasta `vault-template/`.
+3. Habilite os plugins comunitários recomendados (**Dataview** e **Metadata Menu**).
+4. Seu painel relacional e HUD diário já estarão ativos e renderizando perfeitamente!
 
 ---
 
-## 🛠️ CLI COMMAND REFERENCE (`life-os`)
+## ⚡ OPERAÇÃO DIÁRIA NO TERMINAL (`life-os`)
+
+Você pode governar todo o seu sistema através da CLI:
 
 ```bash
-# 1. Morning Boot (Initializes daily note, syncs weather, runs kinetic tick)
-life-os boot [--quiet]
+# 1. Boot Matinal (Sincroniza clima, tick térmico e telemetria matinal)
+life-os boot
 
-# 2. Continuous Ingest (Persists events to SQLite WAL and mirrors to markdown)
-life-os ingest --cat work --summary "Completed sprint review and deployment" --wake "Core Project v1" --set "exec_deep_work_h=+2"
+# 2. Ingestão Contínua (Salva fatos no SQLite WAL, espelha no today_stream e atualiza a Daily)
+life-os ingest --cat work --summary "Reunião de alinhamento e deploy do CRM" --wake "Core Project v1" --set "exec_deep_work_h=+2" "bio_caffeine_doses=+1"
 
-# 3. Sub-millisecond Status (<15ms instant telemetry hydration)
+# 3. Status Instantâneo (<15ms via SQLite local para hidratação de contexto)
 life-os status
 
-# 4. Weather Sync (Open-Meteo barometric and meteorological sync)
+# 4. Sincronização Meteorológica Exógena (Pressão, temp, umidade, qualidade do ar)
 life-os weather-sync
 
-# 5. 3NF Note Gatekeeper
-life-os note create --class classZettel --title "Separation of Concerns" --parent "[[SOLID Principles MOC]]" --props '{"Subtype":"atomic"}'
+# 5. Gatekeeper 3NF de Notas (Validação estrita de classes e herança)
+life-os note create --class classZettel --title "Separação de Conceitos" --parent "[[SOLID Principles MOC]]" --props '{"Subtype":"atomic"}'
 life-os note update "Core Project v1" --props '{"Status":"in_progress"}'
-life-os note progress "Clean Architecture Book" --add 25
-life-os note validate "Main Venture" [--fix]
+life-os note progress "Clean Architecture Book" --add 20
+life-os note validate "Main Venture" --fix
 
-# 6. Nightly Shutdown (Audits missing daily fields, reviews Anki status & timeline)
+# 6. Fechamento Noturno (Auditoria de campos vazios, Anki e fechamento de ciclo)
 life-os shutdown
 ```
 
 ---
 
-## 📜 LICENSE
+## 🤖 INTEGRAÇÃO COM AGENTES DE IA (AI CO-PILOT)
 
-Released under the [MIT License](LICENSE). Built for high-agency engineers, polymaths, and independent creators.
+Se você utiliza **Antigravity, Cursor, Claude Code, Cline** ou qualquer assistente inteligente:
+1. Aponte a pasta `agent-skill/` nas configurações de skills/tools do seu assistente.
+2. O assistente lerá [`agent-skill/SKILL.md`](agent-skill/SKILL.md) e seguirá o **Contrato Inquebrável de 4 Estágios do Turno**:
+   - `core boot` silencioso ao iniciar o dia.
+   - `core ingest` automático em cada fato conversacional.
+   - `core note` para qualquer criação/edição no cofre (com validação dinâmica de enums).
+   - `core shutdown` estruturado ao final da noite.
+
+---
+
+## 📜 LICENÇA
+
+Distribuído sob a licença [MIT](LICENSE). Construído para engenheiros de alta agência, polímatas e mentes focadas em tração real.
