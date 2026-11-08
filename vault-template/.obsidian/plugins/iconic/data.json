@@ -1,0 +1,83 @@
+{
+  "biggerIcons": "mobile",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": false,
+  "showAllFolderIcons": false,
+  "minimalFolderIcons": true,
+  "showMarkdownTabIcons": true,
+  "showTitleIcons": true,
+  "showTagPillIcons": false,
+  "showMenuActions": true,
+  "showSuggestionIcons": false,
+  "showQuickSwitcherIcons": true,
+  "showMoveFileIcons": true,
+  "showItemName": "desktop",
+  "useSearchKeywords": "on",
+  "maxSearchResults": 50,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "maxBackups": 5,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": false,
+    "rulePage": "file"
+  },
+  "appIcons": {},
+  "tabIcons": {
+    "graph": {
+      "color": "gray"
+    }
+  },
+  "fileIcons": {
+    "Central": {
+      "icon": "lucide-warehouse",
+      "unsynced": [
+        "bc4e85c4de262776",
+        "documents/Obsidian iPhone"
+      ]
+    },
+    "Central/Agents": {
+      "icon": "lucide-bot"
+    },
+    "Central/Configs": {
+      "icon": "remix-FingerprintFill",
+      "unsynced": [
+        "bc4e85c4de262776",
+        "documents/Obsidian iPhone"
+      ]
+    },
+    "Central/Pessoal": {
+      "icon": "remix-BodyScanFill",
+      "unsynced": [
+        "bc4e85c4de262776",
+        "documents/Obsidian iPhone"
+      ]
+    },
+    "Central/Profissional": {
+      "icon": "lucide-briefcase-business",
+      "unsynced": [
+        "bc4e85c4de262776",
+        "documents/Obsidian iPhone"
+      ]
+    },
+    "Central/Study": {
+      "icon": "lucide-bookmark",
+      "unsynced": [
+        "bc4e85c4de262776",
+        "documents/Obsidian iPhone"
+      ]
+    }
+  },
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {},
+  "fileRules": [],
+  "folderRules": [],
+  "biggerSearchResults": "mobile",
+  "rememberDeletedItems": false
+}

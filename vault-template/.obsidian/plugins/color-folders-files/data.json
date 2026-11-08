@@ -1,0 +1,86 @@
+{
+  "styles": {
+    "Central": {
+      "backgroundColor": "#2b2b2b",
+      "isBold": true,
+      "textColor": "#ffffff",
+      "opacity": 0.4
+    },
+    "Central/Pessoal": {
+      "backgroundColor": "#737373",
+      "opacity": 0.8,
+      "textColor": "#ffffff"
+    },
+    "Central/Profissional": {
+      "backgroundColor": "#878787",
+      "textColor": "#ffffff"
+    },
+    "Central/Study": {
+      "textColor": "#ffffff",
+      "backgroundColor": "#1c1c1c"
+    },
+    "Central/Zettels": {
+      "textColor": "#ffffff",
+      "backgroundColor": "#a6a6a6"
+    },
+    "Central/Study/1. Inbox": {
+      "backgroundColor": "#feccff",
+      "textColor": "#000000"
+    },
+    "Central/Profissional/1. Inbox": {
+      "textColor": "#000000",
+      "backgroundColor": "#8fd4ff"
+    },
+    "Central/Pessoal/1. Inbox": {
+      "backgroundColor": "#c0ffb8",
+      "textColor": "#000000"
+    },
+    "Central/Agents": {
+      "backgroundColor": "#2e2e2e"
+    },
+    "Central/Hubs": {
+      "backgroundColor": "#7a7a7a",
+      "textColor": "#ffffff"
+    },
+    "Central/Personal": {
+      "backgroundColor": "#616161",
+      "textColor": "#ffffff"
+    },
+    "Central/Professional": {
+      "backgroundColor": "#363636",
+      "textColor": "#ffffff",
+      "isBold": false,
+      "isItalic": false,
+      "opacity": 1,
+      "applyToSubfolders": false,
+      "applyToFiles": false
+    },
+    "Central/Studio": {
+      "backgroundColor": "#303030",
+      "textColor": "#ffffff"
+    },
+    "Central/Archive": {
+      "backgroundColor": "#dbdbdb",
+      "textColor": "#ffffff"
+    },
+    "Central/Configs": {
+      "textColor": "#ffffff",
+      "backgroundColor": "#c2c2c2"
+    }
+  },
+  "presets": {
+    "Home": {
+      "backgroundColor": "#0055ff",
+      "isBold": true,
+      "textColor": "#ffffff"
+    },
+    "s": {
+      "backgroundColor": "#999999",
+      "textColor": "#ffffff"
+    }
+  },
+  "presetOrder": [
+    "Home",
+    "s"
+  ]
+}

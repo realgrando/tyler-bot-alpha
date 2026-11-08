@@ -1,0 +1,67 @@
+/* MOBILE V3: LADO A LADO COMPACTO + RODAPÉ FIXO */
+
+/* 1. Container da Linha: Força layout horizontal e reduz altura */
+.mobile .metadata-menu-field-container,
+.mobile .modal-content .field-container {
+    display: flex !important;
+    flex-direction: row !important; /* Garante lado a lado */
+    align-items: center !important; /* Centraliza verticalmente */
+    justify-content: space-between !important;
+    margin-bottom: 0px !important; /* Remove margem entre linhas */
+    padding: 6px 4px !important;   /* Padding interno pequeno */
+    border-bottom: 1px solid var(--background-modifier-border);
+    min-height: 40px !important;   /* Altura mínima confortável para o dedo */
+}
+
+/* 2. Rótulo (Esquerda): Define largura fixa para não empurrar o valor */
+.mobile .metadata-menu-field-label {
+    flex: 0 0 35% !important; /* Ocupa 35% da largura fixa */
+    width: 35% !important;
+    text-align: left !important;
+    font-size: 0.85em !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    white-space: normal !important; /* Permite quebrar linha se o nome for longo */
+}
+
+/* 3. Valor/Input (Direita): Ocupa o resto do espaço */
+.mobile .metadata-menu-field-value,
+.mobile .metadata-menu-input {
+    flex: 1 !important; /* Ocupa todo o espaço restante */
+    width: auto !important;
+    text-align: right !important;
+    justify-content: flex-end !important;
+    margin-left: 10px !important;
+}
+
+/* Ajuste fino para Inputs de Texto não ficarem gigantes */
+.mobile .metadata-menu-input input[type="text"],
+.mobile .metadata-menu-input input[type="number"] {
+    text-align: right !important;
+    height: 30px !important;
+    padding-right: 0 !important;
+}
+
+/* 4. O PULO DO GATO: Botões de Ação Fixos no Rodapé */
+/* Isso faz com que o botão Salvar flutue sobre a lista, sempre visível */
+.mobile .metadata-menu-modal-footer,
+.mobile .modal-footer {
+    position: sticky !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background-color: var(--modal-background) !important;
+    border-top: 1px solid var(--interactive-accent); /* Linha colorida para destacar */
+    padding: 10px 15px !important;
+    z-index: 1000 !important;
+    box-shadow: 0px -4px 10px rgba(0,0,0,0.2) !important; /* Sombra para separar do conteúdo */
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+/* Garante que o último item da lista não fique escondido atrás do botão fixo */
+.mobile .modal-content {
+    padding-bottom: 70px !important; 
+    overflow-y: auto !important;
+}

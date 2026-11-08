@@ -1,0 +1,66 @@
+{
+  "presetFields": [
+    {
+      "type": "Select",
+      "tagName": "select",
+      "icon": "right-triangle",
+      "tooltip": "Accepts a single value from a list",
+      "colorClass": "select",
+      "options": {
+        "sourceType": "ValuesList",
+        "valuesList": {
+          "1": "inbox",
+          "2": "in_progress",
+          "3": "paused",
+          "4": "waiting",
+          "5": "done",
+          "6": "canceled"
+        }
+      },
+      "name": "Status",
+      "id": "rMH77P",
+      "path": "",
+      "command": {
+        "id": "insert__rMH77P",
+        "icon": "list-plus",
+        "label": "Insert Status field"
+      },
+      "style": {
+        "bold": true
+      }
+    }
+  ],
+  "fileClassQueries": [],
+  "displayFieldsInContextMenu": false,
+  "globallyIgnoredFields": [],
+  "classFilesPath": "Central/Configs/Classes/",
+  "isAutosuggestEnabled": false,
+  "fileClassAlias": "Class",
+  "settingsVersion": "5.5",
+  "globalFileClass": "classBase",
+  "firstDayOfWeek": 1,
+  "enableLinks": true,
+  "enableTabHeader": true,
+  "enableEditor": true,
+  "enableBacklinks": true,
+  "enableStarred": true,
+  "enableFileExplorer": true,
+  "enableSearch": true,
+  "enableProperties": true,
+  "tableViewMaxRecords": 20,
+  "frontmatterListDisplay": "asArray",
+  "fileClassExcludedFolders": [],
+  "showIndexingStatusInStatusBar": true,
+  "fileIndexingExcludedFolders": [
+    "Central/Configs/Assets/"
+  ],
+  "fileIndexingExcludedExtensions": [],
+  "fileIndexingExcludedRegex": [],
+  "frontmatterOnly": true,
+  "showFileClassSelectInModal": true,
+  "chooseFileClassAtFileCreation": false,
+  "autoInsertFieldsAtFileClassInsertion": false,
+  "fileClassIcon": "package",
+  "isAutoCalculationEnabled": false,
+  "disableDataviewPrompt": false
+}

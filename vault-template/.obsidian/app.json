@@ -1,0 +1,20 @@
+{
+  "propertiesInDocument": "hidden",
+  "newFileLocation": "root",
+  "newFileFolderPath": "Central/Zettels",
+  "attachmentFolderPath": "Central/Configs/Assets",
+  "alwaysUpdateLinks": true,
+  "openBehavior": "file:",
+  "promptDelete": false,
+  "defaultViewMode": "preview",
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "showLineNumber": false,
+  "rightToLeft": false,
+  "spellcheck": false,
+  "zoomLevel": 1.31,
+  "showIndentGuide": true,
+  "userIgnoreFilters": [
+    "Central/Archive/"
+  ]
+}

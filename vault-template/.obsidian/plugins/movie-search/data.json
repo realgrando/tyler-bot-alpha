@@ -1,0 +1,18 @@
+{
+  "folder": "Central/Study/Sources/Movies",
+  "file_name_format": "{{title}}",
+  "template_file": "Central/Configs/Templates/Movie.md",
+  "open_page_on_completion": true,
+  "locale_preference": "auto",
+  "ask_preferred_locale": false,
+  "api_key": "",
+  "include_adult": true,
+  "service_provider": "TMDB",
+  "recent_locales": {},
+  "no_api_key_attempts": 2,
+  "frontmatter": "",
+  "content": "",
+  "use_default_frontmatter": true,
+  "default_frontmatter_key_type": "Snake Case",
+  "templateFile": "Central/Configs/Templates/Movie.md"
+}

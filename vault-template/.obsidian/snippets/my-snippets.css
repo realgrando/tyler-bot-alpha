@@ -1,0 +1,18 @@
+.customdata{
+   width: full;
+   display: flex;
+   justify-content: center;
+}
+.customdata input{
+   diplay: flex;
+   align-text: center;
+   padding: 16px;
+}
+
+/* Suaviza a transição do zoom no Graph View */
+.graph-view-canvas {
+    transition: transform 0.2s ease-in-out;
+}
+body {
+    --zoom-multiplier: 1.31 !important;
+}

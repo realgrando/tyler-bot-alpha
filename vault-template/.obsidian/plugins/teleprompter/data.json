@@ -1,0 +1,411 @@
+{
+  "panel": {
+    "panels": [
+      {
+        "id": "control",
+        "state": {
+          "items": [
+            {
+              "id": "play",
+              "state": {
+                "value": true
+              }
+            },
+            {
+              "id": "pin-note",
+              "state": {
+                "value": true
+              }
+            },
+            {
+              "id": "speed",
+              "state": {
+                "value": 1
+              }
+            },
+            {
+              "id": "font-size",
+              "state": {}
+            },
+            {
+              "id": "line-height",
+              "state": {
+                "value": 1.3
+              }
+            },
+            {
+              "id": "letter-spacing",
+              "state": {}
+            },
+            {
+              "id": "font-family",
+              "state": {}
+            },
+            {
+              "id": "padding",
+              "state": {}
+            },
+            {
+              "id": "flip-x",
+              "state": {}
+            },
+            {
+              "id": "flip-y",
+              "state": {}
+            },
+            {
+              "id": "text-color",
+              "state": {}
+            },
+            {
+              "id": "bg-color",
+              "state": {
+                "value": "#272727"
+              }
+            },
+            {
+              "id": "content",
+              "state": {}
+            },
+            {
+              "id": "opacity",
+              "state": {}
+            },
+            {
+              "id": "detach-window",
+              "state": {}
+            },
+            {
+              "id": "open-settings",
+              "state": {}
+            },
+            {
+              "id": "fullscreen",
+              "state": {}
+            }
+          ]
+        },
+        "defaults": {
+          "items": [
+            {
+              "id": "play",
+              "state": {}
+            },
+            {
+              "id": "pin-note",
+              "state": {}
+            },
+            {
+              "id": "speed",
+              "state": {}
+            },
+            {
+              "id": "font-size",
+              "state": {}
+            },
+            {
+              "id": "line-height",
+              "state": {}
+            },
+            {
+              "id": "letter-spacing",
+              "state": {}
+            },
+            {
+              "id": "font-family",
+              "state": {}
+            },
+            {
+              "id": "padding",
+              "state": {}
+            },
+            {
+              "id": "flip-x",
+              "state": {}
+            },
+            {
+              "id": "flip-y",
+              "state": {}
+            },
+            {
+              "id": "text-color",
+              "state": {}
+            },
+            {
+              "id": "bg-color",
+              "state": {}
+            },
+            {
+              "id": "content",
+              "state": {}
+            },
+            {
+              "id": "opacity",
+              "state": {}
+            },
+            {
+              "id": "detach-window",
+              "state": {}
+            },
+            {
+              "id": "open-settings",
+              "state": {}
+            },
+            {
+              "id": "fullscreen",
+              "state": {}
+            }
+          ]
+        }
+      },
+      {
+        "id": "control",
+        "state": {
+          "name": "Control side-panel",
+          "location": "left",
+          "alignment": "center",
+          "width": 250,
+          "isOpen": false,
+          "items": [
+            {
+              "id": "play",
+              "state": {
+                "value": true
+              }
+            },
+            {
+              "id": "pin-note",
+              "state": {
+                "value": true
+              }
+            },
+            {
+              "id": "speed",
+              "state": {
+                "value": 1
+              }
+            },
+            {
+              "id": "font-size",
+              "state": {}
+            },
+            {
+              "id": "line-height",
+              "state": {
+                "value": 1.3
+              }
+            },
+            {
+              "id": "letter-spacing",
+              "state": {}
+            },
+            {
+              "id": "font-family",
+              "state": {}
+            },
+            {
+              "id": "padding",
+              "state": {}
+            },
+            {
+              "id": "flip-x",
+              "state": {}
+            },
+            {
+              "id": "flip-y",
+              "state": {}
+            },
+            {
+              "id": "text-color",
+              "state": {}
+            },
+            {
+              "id": "bg-color",
+              "state": {
+                "value": "#272727"
+              }
+            },
+            {
+              "id": "content",
+              "state": {}
+            },
+            {
+              "id": "opacity",
+              "state": {}
+            },
+            {
+              "id": "detach-window",
+              "state": {}
+            },
+            {
+              "id": "open-settings",
+              "state": {}
+            },
+            {
+              "id": "fullscreen",
+              "state": {}
+            }
+          ]
+        },
+        "defaults": {
+          "name": "Control side-panel",
+          "location": "left",
+          "alignment": "center",
+          "width": 250,
+          "isOpen": false,
+          "items": [
+            {
+              "id": "play",
+              "state": {}
+            },
+            {
+              "id": "pin-note",
+              "state": {}
+            },
+            {
+              "id": "speed",
+              "state": {}
+            },
+            {
+              "id": "font-size",
+              "state": {}
+            },
+            {
+              "id": "line-height",
+              "state": {}
+            },
+            {
+              "id": "letter-spacing",
+              "state": {}
+            },
+            {
+              "id": "font-family",
+              "state": {}
+            },
+            {
+              "id": "padding",
+              "state": {}
+            },
+            {
+              "id": "flip-x",
+              "state": {}
+            },
+            {
+              "id": "flip-y",
+              "state": {}
+            },
+            {
+              "id": "text-color",
+              "state": {}
+            },
+            {
+              "id": "bg-color",
+              "state": {}
+            },
+            {
+              "id": "content",
+              "state": {}
+            },
+            {
+              "id": "opacity",
+              "state": {}
+            },
+            {
+              "id": "detach-window",
+              "state": {}
+            },
+            {
+              "id": "open-settings",
+              "state": {}
+            },
+            {
+              "id": "fullscreen",
+              "state": {}
+            }
+          ]
+        }
+      },
+      {
+        "id": "pagemap",
+        "state": {
+          "width": 15,
+          "items": []
+        },
+        "defaults": {}
+      },
+      {
+        "id": "eyeline",
+        "state": {
+          "isOpen": false
+        },
+        "defaults": {
+          "isOpen": false
+        }
+      }
+    ]
+  },
+  "control": {
+    "plugins": {
+      "bg-color": {
+        "value": "#272727"
+      },
+      "play": {
+        "value": true
+      },
+      "line-height": {
+        "value": 1.3
+      },
+      "speed": {
+        "value": 1
+      },
+      "pin-note": {
+        "value": true
+      }
+    }
+  },
+  "detach-window": {
+    "value": false
+  },
+  "wake-lock": {
+    "isEnabled": true
+  },
+  "play": {
+    "value": true
+  },
+  "pin-note": {
+    "value": true
+  },
+  "speed": {
+    "value": 1
+  },
+  "opacity": {
+    "value": 100
+  },
+  "fullscreen": {
+    "value": false
+  },
+  "bg-color": {
+    "value": "#272727",
+    "defaultColor": "var(--color-base-00)"
+  },
+  "text-color": {
+    "value": null
+  },
+  "flip-x": {
+    "value": false
+  },
+  "padding": {
+    "value": [
+      50,
+      5,
+      50,
+      5
+    ]
+  },
+  "letter-spacing": {
+    "value": 0
+  },
+  "line-height": {
+    "value": 1.3
+  }
+}

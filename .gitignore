@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite databases & WAL
+*.db-wal
+*.db-shm
+*.sqlite-wal
+*.sqlite-shm
+
+# Backups & archives
+*.tar.gz
+*.zip
+*.bak
+
+# Environment & local secrets
+.env
+.env.local
+*.local
+
+# Obsidian runtime & cache
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.obsidian/indexed*
+.obsidian/plugins/*/data.json.bak
+.obsidian/*.sync-conflict-*
+
+# OS generated
+.DS_Store
+Thumbs.db
+*.db
+*.sqlite

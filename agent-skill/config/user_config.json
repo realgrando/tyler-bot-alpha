@@ -1,0 +1,20 @@
+{
+  "onboarding_completed": false,
+  "user_name": "",
+  "user_nickname": "",
+  "agent_name": "Jarvis",
+  "agent_tone": "direct_pragmatic",
+  "vault_path": "",
+  "city": "",
+  "state": "",
+  "country": "BR",
+  "lat": 0.0,
+  "lon": 0.0,
+  "timezone": "America/Sao_Paulo",
+  "features": {
+    "anki": true,
+    "google_cli": false,
+    "git_pow": true,
+    "weather_sync": true
+  }
+}
